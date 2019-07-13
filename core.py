@@ -67,7 +67,7 @@ def build_report():
 def process():
     global execution_time
     start = time.time();
-    header = '<!DOCTYPE html><html><head><title>Calculate PI</title></head><body><h1>Numeric value of Pi upto Nth ' \
+    header = '<!DOCTYPE html><html><head><title>Calculate PI</title></head><body><h1>Numeric value of Pi up to Nth ' \
              'place</h1> '
     trailer = '</body></html>'
     digit_count = request.args.get('len', default = 100, type = int)
