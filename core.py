@@ -10,6 +10,8 @@ import socket
 import getmac
 
 app = Flask(__name__)
+app.config['ENV'] = 'development'
+app.config['DEBUG'] = True
 
 execution_time = 0
 
@@ -35,7 +37,7 @@ def build_report():
     text_end = '</font>'
     bold_start = '<strong>'
     bold_end = '</strong>'
-    title = red + '>>>>>>>>>>>>>>>>>>> REPORT <<<<<<<<<<<<<<<<<<<' + text_end
+    title = red + '>>>>>>>>>>>>>>>> REPORT <<<<<<<<<<<<<<<<' + text_end
     newline = '<br>'
     os_name = blue + 'OS Name :: ' + text_end + bold_start + os.name + bold_end
     platform_name = blue + 'Platform Name :: ' + text_end + bold_start + platform.system() + bold_end
@@ -65,7 +67,8 @@ def build_report():
 def process():
     global execution_time
     start = time.time();
-    header = '<!DOCTYPE html><html><body>'
+    header = '<!DOCTYPE html><html><head><title>Calculate PI</title></head><body><h1>Numeric value of Pi upto Nth ' \
+             'place</h1> '
     trailer = '</body></html>'
     digit_count = 10
     digit_count = request.args.get('len')
