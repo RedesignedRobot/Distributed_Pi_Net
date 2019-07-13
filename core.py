@@ -63,15 +63,14 @@ def build_report():
     return final_string
 
 
-@app.route("/pi")
+@app.route('/pi')
 def process():
     global execution_time
     start = time.time();
     header = '<!DOCTYPE html><html><head><title>Calculate PI</title></head><body><h1>Numeric value of Pi upto Nth ' \
              'place</h1> '
     trailer = '</body></html>'
-    digit_count = 10
-    digit_count = request.args.get('len')
+    digit_count = request.args.get('len', default = 100, type = int)
     pi_digits = compute_pi(int(digit_count))
     pi_long_string = str(pi_digits)
     pi_string = ''
