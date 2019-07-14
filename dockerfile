@@ -29,3 +29,9 @@ COPY . /app
 WORKDIR /app
 ENTRYPOINT [ "python3" ]
 CMD [ "./core.py" ]
+RUN BUILD SUCESSFUL!
+RUN echo Start the server by running:
+RUN echo docker run -d -p 5000:5000 amirayub/pi-net
+RUN echo api endpoint at: http://localhost:5000/pi
+RUN echo You can pass the len param to specify number of decimal places.
+RUN echo Example: http://localhost:5000/pi?len=1000
