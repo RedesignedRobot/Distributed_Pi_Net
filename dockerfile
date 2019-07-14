@@ -18,7 +18,7 @@ RUN apt-get upgrade -y
 RUN apt-get install software-properties-common -y
 RUN apt-get install python3 -y
 RUN apt-get install python3-dev -y
-RUN apt-get install pip3 -y
+RUN apt-get install python3-pip -y
 RUN pip3 install Flask
 RUN pip3 install getmac
 RUN pip3 install pipdeptree
