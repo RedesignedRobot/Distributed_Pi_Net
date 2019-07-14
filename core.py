@@ -15,6 +15,7 @@ app.config['DEBUG'] = True
 
 execution_time = 0
 
+
 def compute_pi(n):
     decimal.getcontext().prec = n + 1
     C = 426880 * decimal.Decimal(10005).sqrt()
@@ -31,6 +32,7 @@ def compute_pi(n):
     pi = C / S
     return pi
 
+
 def build_report():
     red = '<font size="4" color="red">'
     blue = '<font size="3" color="blue">'
@@ -41,24 +43,24 @@ def build_report():
     newline = '<br>'
     os_name = blue + 'OS Name :: ' + text_end + bold_start + os.name + bold_end
     platform_name = blue + 'Platform Name :: ' + text_end + bold_start + platform.system() + bold_end
-    user_name = blue +'User :: ' + text_end + bold_start + getpass.getuser() + bold_end
+    user_name = blue + 'User :: ' + text_end + bold_start + getpass.getuser() + bold_end
     host_name = blue + 'Hostname :: ' + text_end + bold_start + socket.gethostname() + bold_end
     mac_addr = blue + 'MAC Address :: ' + text_end + bold_start + getmac.get_mac_address() + bold_end
     exec_time = blue + 'Execution Time(sec) :: ' + text_end + bold_start + "{0:.2f}".format(execution_time) + bold_end
-    final_string = newline\
-                   +title\
-                   +newline\
-                   +os_name\
-                   +newline\
-                   +platform_name\
-                   +newline\
-                   +user_name\
-                   +newline\
-                   +host_name\
-                   +newline \
-                   +mac_addr \
-                   +newline \
-                   +exec_time
+    final_string = newline \
+                   + title \
+                   + newline \
+                   + os_name \
+                   + newline \
+                   + platform_name \
+                   + newline \
+                   + user_name \
+                   + newline \
+                   + host_name \
+                   + newline \
+                   + mac_addr \
+                   + newline \
+                   + exec_time
 
     return final_string
 
@@ -84,8 +86,8 @@ def process():
             i = 0
 
     end = time.time()
-    execution_time = end-start
-    final_string = header+pi_string+build_report()+trailer
+    execution_time = end - start
+    final_string = header + pi_string + build_report() + trailer
     return str(final_string)
 
 
