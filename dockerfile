@@ -13,7 +13,6 @@
 
 FROM ubuntu:latest
 LABEL maintainer="Amir Ayub, dev.amirayub@gmail.com"
-RUN add-apt-repository ppa:deadsnakes/ppa
 RUN apt-get update
 RUN apt-get upgrade -y
 RUN apt-get install software-properties-common -y
