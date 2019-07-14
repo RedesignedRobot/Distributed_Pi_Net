@@ -22,6 +22,8 @@ RUN apt-get install python3-pip -y
 RUN pip3 install Flask
 RUN pip3 install getmac
 RUN pip3 install pipdeptree
+RUN apt-get update
+RUN apt-get upgrade -y
 EXPOSE 5000
 COPY . /app
 WORKDIR /app
