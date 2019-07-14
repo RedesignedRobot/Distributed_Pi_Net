@@ -29,7 +29,7 @@ COPY . /app
 WORKDIR /app
 ENTRYPOINT [ "python3" ]
 CMD [ "./core.py" ]
-RUN BUILD SUCESSFUL!
+RUN echo BUILD SUCESSFUL!
 RUN echo Start the server by running:
 RUN echo docker run -d -p 5000:5000 amirayub/pi-net
 RUN echo api endpoint at: http://localhost:5000/pi
